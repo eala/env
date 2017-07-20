@@ -7,7 +7,7 @@ export LSCOLORS="Exfxcxdxbxegedabagacad"
 export LS_OPTS="--color=auto"
 
 # grep highlight
-export GREP_OPTIONS='--color=auto'
+export GREP_OPT='--color=auto'
 
 
 ####### editor #######
@@ -18,3 +18,6 @@ export EDITOR="$VISUAL"
 ####### alias #######
 alias ls="ls ${LS_OPTS}"
 alias ll="ls -al ${LS_OPTS}"
+
+alias grep="grep ${GREP_OPT}"
+unset GREP_OPTIONS
