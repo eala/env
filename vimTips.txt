@@ -1,0 +1,2 @@
+replace some pattern in the middle to the end
+%s/平裝.\+$//gc     # 移除平裝後的所有字, .: 萬用字元, \+: 0或多個
