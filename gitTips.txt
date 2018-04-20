@@ -1,0 +1,8 @@
+* git branch
+    1. -a: all, show all branches including remote & local
+    2. -r: remote, show remote branches
+
+* git blame
+    1. list the author line-by-line of source code
+
+
