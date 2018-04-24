@@ -6,3 +6,26 @@ clang --version
 sudo port install gcc49 # sample to install gcc49, you can use port search gcc to find version
 port select --list gcc
 sudo port select --set gcc gcc49  # example to select gcc49
+
+# disk management
+sudo periodic daily
+sudo periodic weekly
+sudo periodic monthly
+
+# XCode & iOS disk storage clean up
+# ref: https://www.jianshu.com/p/e7bb4b163dc1, https://www.jianshu.com/p/b3d9d8c204e6
+    # 1. crash logs of simulator
+    rm -rf ~/Library/Developer/Xcode/DerivedData/*
+    # 2. archived developed target
+    rm -rf ~/Library/Developer/Xcode/Archives/*
+    # 3. symbols in connected device
+    rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*
+    # 4. simulator data
+    rm -rf ~/Library/Developer/CoreSimulator/*
+    # 5. crash logs
+    rm -rf ~/Library/Caches/com.apple.dt.Xcode/*
+    # 6. iOS device backup with iTunes, suggested to keep latest one
+    # ~/Library/Application Support/MobileSync/Backup/*
+    # 7. documents
+    rm -rf ~/Library/Developer/Shared/Documentation/DocSets/*
+
