@@ -1,0 +1,8 @@
+# check Mac architecture or Target value
+clang --version
+
+# MacPort install gcc, but it seems not work in High Sierra
+# ref: http://www.ficksworkshop.com/blog/post/installing-gcc-on-mac
+sudo port install gcc49 # sample to install gcc49, you can use port search gcc to find version
+port select --list gcc
+sudo port select --set gcc gcc49  # example to select gcc49
