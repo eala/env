@@ -1,0 +1,5 @@
+# find files and delete, e.g. config.cachefiles
+find . -name config.cache -exec rm -rf {} \;
+
+# search previous typed commands
+ctrl-r with keywords
