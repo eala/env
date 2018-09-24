@@ -5,4 +5,9 @@
 * git blame
     1. list the author line-by-line of source code
 
-
+* git config
+    * set name/e-mail
+        git config --global user.name "eala"
+        git config --global user.email "eala0113@gmail.com"
+    * use OSX keychain helper
+        git config --global credential.helper oxskeychain
