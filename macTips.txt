@@ -29,3 +29,6 @@ sudo periodic monthly
     # 7. documents
     rm -rf ~/Library/Developer/Shared/Documentation/DocSets/*
 
+# Finder preference
+Finder new window does not work with command + N (it opens Tab instead)
+    => System Preference -> Dock -> Prefer tabs when opening documents -> Manually
