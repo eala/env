@@ -11,3 +11,6 @@
         git config --global user.email "eala0113@gmail.com"
     * use OSX keychain helper
         git config --global credential.helper oxskeychain
+
+* git update-index --assume-unchanged
+    * stop tracking some file, e.g. password
