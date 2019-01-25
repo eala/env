@@ -1,7 +1,9 @@
 # input can be video/image file, or directory
 # ref: https://sno.phy.queensu.ca/~phil/exiftool/faq.html
 
-if [ $# > 3 ]; then
+expectArgc=2
+
+if [ ${expectArgc} -eq $# ]; then
     fileName=$1
     #dateTime="2017:12:22 09:57:45"
     dateTime="$2"
