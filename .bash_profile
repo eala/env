@@ -21,6 +21,7 @@ elif [[ $platform == 'Mac' ]]; then
     alias god="god -t x1z -A x"
 fi
 
+alias astyle='astyle -A1 -s4 -Y -p -H -xe -k3 -W3 -xf -xh -xC80 -n -z2 --mode=c -S -f'
 
 ####### color #######
 
