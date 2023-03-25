@@ -1,3 +1,5 @@
+set -euxo pipefail
+
 # script to setup environment of build_tools
 export PROJECT=build_tools
 export PROJECT_ROOT=/Users/hank/Desktop/Hank/Projects/src/${PROJECT}
