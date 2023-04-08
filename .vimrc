@@ -11,18 +11,23 @@ au BufWrite /private/tmp/crontab.* set nowritebackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup
 
+" Display
+set nu
 syntax enable
 syntax on
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-
-" Ref: http://rritw.com/a/caozuoxitong/Windows/20120813/204392.html
-set nu
+set smarttab
 set cindent
 set autoindent
+set smartindent
+colorscheme desert
+
+" Search
+set hlsearch
 set ignorecase
-" colorscheme desert
+set smartcase
 
 " CTags, add by eala
 set tags=./tags,./TAGS,tags:~,TAGS;
@@ -64,7 +69,6 @@ let g:miniBufExplModSelTarget = 1
 
 nnoremap <silent> <F3> :Grep<CR>
 
-set hlsearch
 
 " NERDTree added by eala
 " start NERDTree when Vim starts
