@@ -75,6 +75,12 @@ nnoremap <silent> <F3> :Grep<CR>
 "autocmd vimenter * NERDTree
 "" if no other win, automatic shutdown
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+nmap <leader>nt :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc$','^.DS_Store$']
+" match the keyboard bindings of CtrlP
+autocmd FileType nerdtree nmap <buffer> <C-v> s
+autocmd FileType nerdtree nmap <buffer> <C-x> i
 
 filetype plugin indent on
 "set nocompatible
