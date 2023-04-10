@@ -23,6 +23,7 @@ set cindent
 set autoindent
 set smartindent
 colorscheme desert
+set cursorline 
 
 " Search
 set hlsearch
@@ -34,13 +35,14 @@ set tags=./tags,./TAGS,tags:~,TAGS;
 set autochdir
 
 " taglist, add by eala
-let Tlist_Use_Left_Window=1
+" let Tlist_Use_Left_Window=1
+let Tlist_Use_Right_Window=1
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 nmap <F2> :Tlist<CR>
 
 " srcExpl, add by eala
-nmap <F5> :SrcExplToggle
+nmap <F5> :SrcExplToggle<CR>
 let g:SrcExpl_winHeight=8
 let g:SrcExpl_refreshTime=100
 let g:SrcExpl_jumpKey='<Enter>'
@@ -56,31 +58,6 @@ let g:SrcExpl_isUpdateTags=0
 let g:SrcExpl_updateTagsCmd='ctags --sort=foldcase -R .'
 let g:SrcExpl_updateTagsKey='<F12>'
 
-
-" Windows Manager, add by eala
-" let g:winManagerWindowlLayout='FileExplorer|TagList'
-" nmap wm :WMToggle<cr>
-
-" min buffer explorer
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-
-nnoremap <silent> <F3> :Grep<CR>
-
-
-" NERDTree added by eala
-" start NERDTree when Vim starts
-"autocmd vimenter * NERDTree
-"" if no other win, automatic shutdown
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
-nmap <leader>nt :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.pyc$','^.DS_Store$']
-" match the keyboard bindings of CtrlP
-autocmd FileType nerdtree nmap <buffer> <C-v> s
-autocmd FileType nerdtree nmap <buffer> <C-x> i
 
 filetype plugin indent on
 "set nocompatible
@@ -98,21 +75,20 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 call plug#end()
 
 " NERDTree configuration
-let NERDTreeWinPos='right'
-nmap <F8>  :NERDTree<CR>
-let NERDTreeWinSize=16
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=32
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc$','^.DS_Store$']
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <F8> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
+nmap <leader>nt :NERDTreeToggle<CR>
 " auto start NERDTree, keep cursor at another window
 autocmd VimEnter * NERDTree | wincmd p
-
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-
+" match the keyboard bindings of CtrlP
+autocmd FileType nerdtree nmap <buffer> <C-v> s
+autocmd FileType nerdtree nmap <buffer> <C-x> i
 
 " CScope config
 :cs add cscope.out
@@ -207,14 +183,14 @@ if has("cscope")
     " go back to where you were before the search.
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-/>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-/>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-/>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
